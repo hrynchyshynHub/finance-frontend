@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Currency} from '../models/currency';
 import {CurrencyService} from '../services/currency.service';
 
@@ -11,7 +11,8 @@ export class CurrencyComponent implements OnInit {
 
   currentCurrenncy: Currency;
 
-  constructor(private currencyService:CurrencyService) { }
+  constructor(private currencyService: CurrencyService) {
+  }
 
   ngOnInit() {
     this.currencyService.getCurrency().subscribe(

@@ -3,7 +3,7 @@ import {Note} from '../models/note';
 import {Observable, of} from 'rxjs';
 import {NotificationService} from './notification.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {catchError, map, tap} from 'rxjs/operators';
+import {catchError} from 'rxjs/operators';
 
 
 @Injectable({

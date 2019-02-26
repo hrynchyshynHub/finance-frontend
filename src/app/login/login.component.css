@@ -1,0 +1,45 @@
+.login-wrapper {
+  width: 90%;
+  height: 100%;
+  padding-top: 150px;
+  color: #CFD8DC;
+  background: rgb(25, 43, 53);
+  background: radial-gradient(circle, rgba(25, 43, 53, 0.9346113445378151) 100%, rgba(47, 62, 79, 1) 100%);
+  float: left;
+}
+
+.form-control {
+  margin-top: 0;
+  margin-left: 40%;
+  width: 20%;
+  background: #CFD8DC;
+}
+
+.login-label {
+  margin-left: 40%;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.form-group {
+  margin-left: 40%;
+  margin-top: 20px;
+}
+
+
+.btn-login {
+  background: #CFD8DC;
+  color: black;
+  padding: 5px 36px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+}
+
+.btn-login:hover {
+  background-color: lightgoldenrodyellow;
+}
+

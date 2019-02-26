@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import {catchError} from 'rxjs/operators';
 import {Currency} from '../models/currency';
-import {RequestOptions} from '@angular/http';
 
 
 @Injectable({
@@ -11,7 +10,7 @@ import {RequestOptions} from '@angular/http';
 })
 export class CurrencyService {
 
-  authToken = "Basic " + btoa("ivan:ivan");
+  authToken = 'Basic ' + btoa('ivan:ivan');
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -19,7 +18,9 @@ export class CurrencyService {
       Authorization: this.authToken
     })
   };
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 
   getCurrency(): Observable<Currency> {
     const url = 'http://localhost:8888/currency';
@@ -29,7 +30,7 @@ export class CurrencyService {
     );
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead

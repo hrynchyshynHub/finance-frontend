@@ -1,0 +1,13 @@
+<div class="login-wrapper">
+
+  <form name="form" (ngSubmit)="login()">
+    <label class="login-label" for="name">Username</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="username" name="name">
+    <label class="login-label" for="pass">Password</label>
+    <input type="password" class="form-control" id="pass" [(ngModel)]="password" name="pass">
+    <div class="form-group">
+      <button class="btn-login">Login</button>
+    </div>
+  </form>
+
+</div>

@@ -1,27 +1,30 @@
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 10%;
-    background-color: #3E4C55;
-    height: 100%;
-    float: left;
-    text-align:center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  background-color: #3E4C55;
+  height: 100%;
+  float: left;
+  text-align: center;
 }
+
 li a {
-    display: block;
-    /*color: #7c898e;*/
-    padding: 8px 16px;
-    text-decoration: none;
-    text-align:center;
-    margin-top: 70px;
+  display: block;
+  /*color: #7c898e;*/
+  padding: 8px 16px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 70px;
 
 }
+
 li a:hover {
-    background-color: white;
-    color: #3E4C55;
+  background-color: white;
+  color: #3E4C55;
 }
-.img-menu-item{
-    width: 80px;
-    height: 80px;
+
+.img-menu-item {
+  width: 80px;
+  height: 80px;
 }

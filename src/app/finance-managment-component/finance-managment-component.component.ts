@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {CurrencyService} from '../services/currency.service';
-import {Currency} from '../models/currency';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-finance-managment-component',
@@ -9,7 +7,8 @@ import {Currency} from '../models/currency';
 })
 export class FinanceManagmentComponentComponent implements OnInit {
 
-  constructor(){}
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

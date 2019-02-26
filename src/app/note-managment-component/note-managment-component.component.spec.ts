@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NoteManagmentComponentComponent } from './note-managment-component.component';
+import {NoteManagmentComponentComponent} from './note-managment-component.component';
 
 describe('NoteManagmentComponentComponent', () => {
   let component: NoteManagmentComponentComponent;
@@ -8,9 +8,9 @@ describe('NoteManagmentComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoteManagmentComponentComponent ]
+      declarations: [NoteManagmentComponentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
