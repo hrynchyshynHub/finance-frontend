@@ -1,19 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import {Currency} from '../models/currency';
+import {RequestOptions} from '@angular/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrencyService {
+
+  authToken = "Basic " + btoa("ivan:ivan");
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: this.authToken
+    })
+  };
   constructor(private http: HttpClient) { }
 
   getCurrency(): Observable<Currency> {
     const url = 'http://localhost:8888/currency';
-    return this.http.get<Currency>(url).pipe(
+
+    return this.http.get<Currency>(url, this.httpOptions).pipe(
       catchError(this.handleError<Currency>(`getCurrency`))
     );
   }
