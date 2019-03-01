@@ -19,4 +19,8 @@ export class LoginComponent {
     const cred = new Credentials(this.username, this.password);
     this.loginService.login(cred);
   }
+
+  isLoggedIn(): boolean {
+    return this.loginService.isLoggedIn();
+  }
 }

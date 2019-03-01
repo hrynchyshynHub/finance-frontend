@@ -16,6 +16,7 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './_guards/auth.guard';
 import {FinanceInterceptor} from './_shared/finance.interceptor';
 import {LoginService} from './services/login.service';
+import { BudgetsComponent } from './budgets/budgets.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {LoginService} from './services/login.service';
     NotificationComponent,
     FinanceManagmentComponentComponent,
     CurrencyComponent,
-    LoginComponent
+    LoginComponent,
+    BudgetsComponent
   ],
   imports: [
     BrowserModule,

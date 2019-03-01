@@ -19,9 +19,17 @@
 .main-finances {
   float: left;
   width: 75%;
+  margin-left: 50px;
+  height: 700px;
+  color: black;
 }
 
 .rate-wrapper {
   float: right;
   width: 20%;
 }
+.budget-wrapper{
+  width: 35%;
+}
+
+/*background: #3E4C55;*/

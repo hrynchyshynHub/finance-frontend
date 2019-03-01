@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {BudgetService} from '../services/budget.service';
+import {Budget} from '../models/budget';
 
 @Component({
   selector: 'app-finance-managment-component',
@@ -7,10 +9,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class FinanceManagmentComponentComponent implements OnInit {
 
-  constructor() {
-  }
+  constructor(){
 
+  }
   ngOnInit(): void {
+
   }
 
 }

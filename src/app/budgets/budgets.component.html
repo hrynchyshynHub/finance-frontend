@@ -1,0 +1,47 @@
+<div class="budget-wrapper">
+  <div class="budget-header">
+    Budgets
+    <div class="new-budget-button" (click)="createBudget()">
+      +
+    </div>
+  </div>
+
+  <!--TODO: Add hover-->
+  <div *ngIf="!isCreatingFormOpened">
+    <div *ngFor="let budget of budgets">
+      <div class="clear"></div>
+      <div class="budget-item">
+        <img src="assets/wallet.png" class="img-budget-item">
+        <div class="budget-item-wrapper">
+          <div class="budget-item-header">
+            {{budget.totalAmount}} {{budget.currencyType}}
+          </div>
+          <div class="budget-item-value">
+           {{budget.name}}
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div *ngIf="isCreatingFormOpened">
+    <div class="create-budget-wrapper">
+      <label class="create-budget-label-wrapper" for="name">Name</label>
+      <input type="text" [(ngModel)]="newBudget.name" id="name">
+      <label class="create-budget-label-wrapper" for="currencyType">Currency Type</label>
+      <select id="currencyType" [(ngModel)]="newBudget.currencyType">
+        <option value="UAH">UAH</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
+      <br>
+      <label class="create-budget-label-wrapper" for="description">Description</label>
+      <input id="description" type="text" [(ngModel)]="newBudget.description">
+      <br>
+      <button (click)="saveBudget(newBudget)">Create</button>
+    </div>
+  </div>
+
+
+</div>

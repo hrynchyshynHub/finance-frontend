@@ -9,7 +9,8 @@ import {LoginComponent} from './login/login.component';
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'notes', component: NoteManagmentComponentComponent, canActivate: [AuthGuard]},
-  {path: 'finance', component: FinanceManagmentComponentComponent, canActivate: [AuthGuard]},
+  // {path: 'finance', component: FinanceManagmentComponentComponent, canActivate: [AuthGuard]},
+  {path: 'finance', component: FinanceManagmentComponentComponent},
   {path: 'login', component: LoginComponent},
 ];
 

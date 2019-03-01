@@ -1,5 +1,4 @@
-<div class="login-wrapper">
-
+<div class="login-wrapper" *ngIf="!isLoggedIn()">
   <form name="form" (ngSubmit)="login()">
     <label class="login-label" for="name">Username</label>
     <input type="text" class="form-control" id="name" [(ngModel)]="username" name="name">
@@ -9,5 +8,4 @@
       <button class="btn-login">Login</button>
     </div>
   </form>
-
 </div>

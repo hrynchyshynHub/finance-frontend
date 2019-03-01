@@ -1,42 +1,32 @@
 import {Injectable} from '@angular/core';
-import {Note} from '../models/note';
 import {Observable, of} from 'rxjs';
 import {NotificationService} from './notification.service';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
+import {Budget} from '../models/budget';
+import {Note} from '../models/note';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class NoteService {
-  private baseUrl = 'http://localhost:8888';
+export class BudgetService {
 
   constructor(private notificationService: NotificationService,
               private http: HttpClient,) {
   }
 
-  getNotes(): Observable<Note[]> {
-    this.notificationService.add('Fetched notes');
-    return this.http.get<Note[]>('http://localhost:8888/note')
+  getBudgets(): Observable<Budget[]> {
+    return this.http.get<Budget[]>('http://localhost:8888/budget')
       .pipe(
         catchError(this.handleError('get notes', []))
       );
   }
 
-  addEmptyNote(): Observable<Note> {
-    return this.http.post<Note>('http://localhost:8888/note', new Note());
+  createBudget(budget: Budget):Observable<Budget>{
+    return this.http.post<Budget>('http://localhost:8888/budget', budget);
   }
 
-  removeNote(id: number): Observable<Note> {
-    const url = `${this.baseUrl}/note/${id}`;
-    return this.http.delete<Note>(url);
-  }
-
-  updateNote(note: Note): Observable<Note> {
-    const url = `${this.baseUrl}/note/${note.id}`;
-    return this.http.put<Note>(url, note);
-  }
 
   /**
    * Handle Http operation that failed.

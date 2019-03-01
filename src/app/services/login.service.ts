@@ -20,7 +20,8 @@ export class LoginService {
       });
   }
 
-  static _logged(): boolean {
-    return !!localStorage.getItem(constants.HEADERS.AUTH_HEADER);
+  isLoggedIn(): boolean{
+    return !!localStorage.getItem(constants.HEADERS.AUTH_HEADER)
   }
+
 }
