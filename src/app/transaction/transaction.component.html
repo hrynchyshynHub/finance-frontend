@@ -1,0 +1,50 @@
+<div class="transaction-wrapper">
+  <div class="transaction-header">
+    Transactions
+    <div class="new-transaction-button" (click)="createTransaction()">
+      +
+    </div>
+  </div>
+
+  <!--TODO: Add hover-->
+  <div *ngIf="!isCreatingFormOpened">
+    <div *ngFor="let transaction of transactions">
+      <div class="clear"></div>
+      <div class="transaction-item">
+        <img src="assets/wallet.png" class="img-transaction-item invert">
+        <div class="transaction-item-wrapper">
+          <div class="transaction-item-header">
+            {{transaction.note}}
+          </div>
+          <div class="transaction-item-value">
+            {{transaction.created}}
+          </div>
+        </div>
+        <div class = "transaction-amount-wrapper">
+          <p [style.color]= getColor(transaction)> {{transaction.value}}</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div *ngIf="isCreatingFormOpened">
+    <div class="create-transaction-wrapper">
+      <label class="create-transaction-label-wrapper" for="value">Amount</label>
+      <input type="number" [(ngModel)]="newTransaction.value" id="value">
+      <label class="create-transaction-label-wrapper" for="note">Note</label>
+      <input type="text" [(ngModel)]="newTransaction.note" id="note">
+      <label class="create-transaction-label-wrapper" for="budget">Budget</label>
+      <select id="budget" [(ngModel)]="newTransaction.budget_id">
+        <option *ngFor = "let budget of budgets" [value]="budget.id">{{budget.name}}</option>
+      </select>
+      <br>
+      <label class="create-transaction-label-wrapper" for="incoming">Is incoming</label>
+      <input id="incoming" type="checkbox" [(ngModel)]="newTransaction.isIncoming">
+      <br>
+      <button (click)="saveTransaction(newTransaction)">Create</button>
+    </div>
+  </div>
+
+
+</div>

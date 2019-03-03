@@ -30,6 +30,13 @@
 }
 .budget-wrapper{
   width: 35%;
+  float: left;
+}
+
+.transaction-wrapper{
+  width: 50%;
+  float: left;
+  margin-left: 20px;
 }
 
 /*background: #3E4C55;*/

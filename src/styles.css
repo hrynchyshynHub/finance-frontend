@@ -29,3 +29,8 @@ body {
   top: 0px;
   right: 6px;
 }
+
+.invert {
+  filter: invert(41%) sepia(17%) saturate(411%) hue-rotate(159deg) brightness(95%) contrast(93%);
+}
+/*.opacity { filter: opacity(80%); }*/

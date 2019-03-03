@@ -18,7 +18,7 @@ export class BudgetsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getBudgets();
+    // this.getBudgets();
     this.budgets = new Array<Budget>();
     this.isCreatingFormOpened = false;
   }
@@ -36,7 +36,12 @@ export class BudgetsComponent implements OnInit {
 
   saveBudget(budget: Budget){
     this.isCreatingFormOpened = false;
-    this.budgetService.createBudget(budget)
-      .subscribe(data => this.budgets.push(data));
+    // this.budgetService.createBudget(budget)
+    //   .subscribe(data => this.budgets.push(data));
+    this.budgets.push(budget);
+  }
+
+  getSourcePath(budget: Budget): string{
+   return "assets/" + budget.currencyType + ".png";
   }
 }
