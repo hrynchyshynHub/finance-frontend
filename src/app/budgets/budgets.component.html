@@ -20,6 +20,18 @@
            {{budget.name}}
           </div>
         </div>
+
+        <div style="display: block">
+          <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+          </canvas>
+        </div>
+
+
       </div>
       <div class="clear"></div>
     </div>
@@ -29,6 +41,8 @@
     <div class="create-budget-wrapper">
       <label class="create-budget-label-wrapper" for="name">Name</label>
       <input type="text" [(ngModel)]="newBudget.name" id="name">
+      <label class="create-budget-label-wrapper" for="goalAmount">Goal amount</label>
+      <input type="number" [(ngModel)]="newBudget.goalAmount" id="goalAmount">
       <label class="create-budget-label-wrapper" for="currencyType">Currency Type</label>
       <select id="currencyType" [(ngModel)]="newBudget.currencyType">
         <option value="UAH">UAH</option>

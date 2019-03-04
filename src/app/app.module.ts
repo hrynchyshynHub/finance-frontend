@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {InputsModule} from 'angular-bootstrap-md';
+import { ChartsModule } from 'ng2-charts';
 
 import {AppComponent} from './app.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
@@ -18,6 +19,7 @@ import {FinanceInterceptor} from './_shared/finance.interceptor';
 import {LoginService} from './services/login.service';
 import { BudgetsComponent } from './budgets/budgets.component';
 import {TransactionComponent} from "./transaction/transaction.component";
+import { BudgetItemComponent } from './budget-item/budget-item.component';
 
 
 @NgModule({
@@ -31,14 +33,16 @@ import {TransactionComponent} from "./transaction/transaction.component";
     CurrencyComponent,
     LoginComponent,
     BudgetsComponent,
-    TransactionComponent
+    TransactionComponent,
+    BudgetItemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     InputsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [LoginService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: FinanceInterceptor, multi: true},

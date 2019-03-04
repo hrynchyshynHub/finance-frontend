@@ -39,6 +39,7 @@ export class TransactionComponent implements OnInit {
     transaction.created = '13 March';
     this.transactions.push(transaction);
   }
+
   public getColor(transaction: Transaction): string{
     return transaction.isIncoming ? "green" : "red";
   }

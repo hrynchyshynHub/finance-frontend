@@ -24,7 +24,6 @@ export class CurrencyService {
 
   getCurrency(): Observable<Currency> {
     const url = 'http://localhost:8888/currency';
-
     return this.http.get<Currency>(url, this.httpOptions).pipe(
       catchError(this.handleError<Currency>(`getCurrency`))
     );

@@ -13,6 +13,11 @@ export class BudgetsComponent implements OnInit {
   newBudget: Budget;
   isCreatingFormOpened: boolean;
 
+  public doughnutChartLabels:string[] = ['Goal', 'Total'];
+  public doughnutChartData:number[] = [1600, 1000];
+  public doughnutChartType:string = 'doughnut';
+
+
   constructor(private budgetService: BudgetService) {
 
   }
@@ -21,6 +26,15 @@ export class BudgetsComponent implements OnInit {
     // this.getBudgets();
     this.budgets = new Array<Budget>();
     this.isCreatingFormOpened = false;
+
+    let goal = 1800;
+    let total = 1600;
+
+    let perTotal = total/goal * 100;
+    let perGoal = 100 - perTotal;
+
+    this.doughnutChartData = [perTotal, perGoal];
+
   }
 
   getBudgets(){
@@ -43,5 +57,14 @@ export class BudgetsComponent implements OnInit {
 
   getSourcePath(budget: Budget): string{
    return "assets/" + budget.currencyType + ".png";
+  }
+
+  // events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+
+  public chartHovered(e:any):void {
+    console.log(e);
   }
 }
