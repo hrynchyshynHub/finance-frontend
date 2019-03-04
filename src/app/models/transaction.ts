@@ -1,8 +1,8 @@
 export class Transaction {
   id: number;
   value: number;
-  isIncoming: boolean;
+  isIncoming: boolean = false;
   created: string;
   note: string;
-  budget_id: number;
+  budgetId: number;
 }

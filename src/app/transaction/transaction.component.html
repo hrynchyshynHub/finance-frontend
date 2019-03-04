@@ -35,7 +35,7 @@
       <label class="create-transaction-label-wrapper" for="note">Note</label>
       <input type="text" [(ngModel)]="newTransaction.note" id="note">
       <label class="create-transaction-label-wrapper" for="budget">Budget</label>
-      <select id="budget" [(ngModel)]="newTransaction.budget_id">
+      <select id="budget" [(ngModel)]="newTransaction.budgetId">
         <option *ngFor = "let budget of budgets" [value]="budget.id">{{budget.name}}</option>
       </select>
       <br>

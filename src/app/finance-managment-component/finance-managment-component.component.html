@@ -6,10 +6,12 @@
 
   <div class="main-finances">
     <div class="budget-wrapper">
-      <app-budgets></app-budgets>
+      <app-budgets [budgets]="budgets"></app-budgets>
     </div>
     <div class="transaction-wrapper">
-      <app-transaction></app-transaction>
+      <app-transaction [transactions] = "allTransactions"
+                       [budgets] = "budgets">
+      </app-transaction>
     </div>
   </div>
 

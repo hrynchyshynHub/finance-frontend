@@ -1,3 +1,22 @@
-<p>
-  budget-item works!
-</p>
+<div class="clear"></div>
+<div class="budget-item">
+  <img [src]= 'getSourcePath(budget)' class="img-budget-item invert">
+  <div class="budget-item-wrapper">
+    <div class="budget-item-header">
+      {{budget.totalAmount}} {{budget.currencyType}}
+    </div>
+    <div class="budget-item-value">
+      {{budget.name}}
+    </div>
+  </div>
+
+  <div class="doughnut-wrapper">
+    <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+</div>

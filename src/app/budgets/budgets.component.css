@@ -5,39 +5,10 @@
   text-align: center;
   color: #CFD8DC;
 }
-.budget-item{
-  color: #CFD8DC;
-  margin-top: 10px;
-  border-bottom: 1px solid #CFD8DC;
-  width: 100%;
+.budgets-wrapper{
+  height: 800px;
   box-sizing: border-box;
-}
-.img-budget-item{
-  width: 10%;
-  height: 40px;
-  float: left;
-  color: #CFD8DC;
-  margin:5px 5px 30px 20px;
-}
-.clear{
-  clear: both;
-}
-.budget-item-wrapper{
-  float: left;
-  width: 75%;
-  box-sizing: border-box;
-}
-.budget-item-header{
-  width: 70%;
-  height: 25px;
-  box-sizing: border-box;
-}
-.budget-item-value{
-  width: 70%;
-  height: 25px;
-  color: lightskyblue;
-  overflow: hidden;
-  box-sizing: border-box;
+  overflow: scroll;
 }
 .new-budget-button{
   height: 40px;
@@ -59,6 +30,9 @@
   color: #CFD8DC;
   padding: 20px;
   margin: 20px;
+}
+.budget-items-wrapper:hover{
+  background: #959FA9;
 }
 .create-budget-wrapper > input{
   /*background: transparent;*/

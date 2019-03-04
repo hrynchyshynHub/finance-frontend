@@ -7,33 +7,12 @@
   </div>
 
   <!--TODO: Add hover-->
-  <div *ngIf="!isCreatingFormOpened">
-    <div *ngFor="let budget of budgets">
-      <div class="clear"></div>
-      <div class="budget-item">
-        <img [src]= 'getSourcePath(budget)' class="img-budget-item invert">
-        <div class="budget-item-wrapper">
-          <div class="budget-item-header">
-            {{budget.totalAmount}} {{budget.currencyType}}
-          </div>
-          <div class="budget-item-value">
-           {{budget.name}}
-          </div>
+  <div *ngIf="!isCreatingFormOpened" class="budgets-wrapper">
+    <div>
+      <div *ngFor="let budget of budgets">
+        <app-budget-item [budget]="budget"></app-budget-item>
         </div>
-
-        <div style="display: block">
-          <canvas baseChart
-                  [data]="doughnutChartData"
-                  [labels]="doughnutChartLabels"
-                  [chartType]="doughnutChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)">
-          </canvas>
-        </div>
-
-
-      </div>
-      <div class="clear"></div>
+        <div class="clear"></div>
     </div>
   </div>
 
