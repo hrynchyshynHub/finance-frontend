@@ -7,21 +7,22 @@
   </div>
 
   <!--TODO: Add hover-->
-  <div *ngIf="!isCreatingFormOpened">
+  <div *ngIf="!isCreatingFormOpened" class="transaction-list-wrapper">
     <div *ngFor="let transaction of transactions">
       <div class="clear"></div>
       <div class="transaction-item">
         <img src="assets/wallet.png" class="img-transaction-item invert">
         <div class="transaction-item-wrapper">
           <div class="transaction-item-header">
-            {{transaction.note}}
+              Budget : {{ findBudgetById(transaction.budgetId).name }}<br>
+              Note : {{transaction.note}}
           </div>
           <div class="transaction-item-value">
             {{transaction.created}}
           </div>
         </div>
         <div class = "transaction-amount-wrapper">
-          <p [style.color]= getColor(transaction)> {{transaction.value}}</p>
+          <p [style.color]= getColor(transaction)> {{transaction.value}} {{findBudgetById(transaction.budgetId).currencyType}}</p>
         </div>
       </div>
       <div class="clear"></div>

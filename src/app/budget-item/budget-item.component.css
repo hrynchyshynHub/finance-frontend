@@ -21,11 +21,9 @@
   box-sizing: border-box;
 }
 .budget-item-header{
-  height: 25px;
   box-sizing: border-box;
 }
 .budget-item-value{
-  height: 100px;
   color: lightskyblue;
   overflow: hidden;
   box-sizing: border-box;

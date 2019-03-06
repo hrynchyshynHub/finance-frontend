@@ -13,6 +13,12 @@ export class BudgetsComponent implements OnInit {
 
   @Input()
   budgets: Budget[];
+  @Input()
+  totalUsdAmountAcrossBudget: number;
+  @Input()
+  totalEurAmountAcrossBudget: number;
+  @Input()
+  totalUahAmountAcrossBudget: number;
   newBudget: Budget;
   isCreatingFormOpened: boolean;
 
@@ -32,7 +38,8 @@ export class BudgetsComponent implements OnInit {
     this.isCreatingFormOpened = false;
     this.budgetService.createBudget(budget)
       .subscribe(data => this.budgets.push(data));
-    // this.budgets.push(budget);
   }
+
+
 
 }

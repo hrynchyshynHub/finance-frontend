@@ -1,8 +1,9 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Transaction} from "../models/transaction";
 import {BudgetService} from "../services/budget.service";
 import {Budget} from "../models/budget";
 import {TransactionService} from '../services/transaction.service';
+import {_finally} from 'rxjs-compat/operator/finally';
 
 @Component({
   selector: 'app-transaction',
@@ -17,6 +18,8 @@ export class TransactionComponent implements OnInit {
   budgets: Budget[];
   newTransaction: Transaction;
   isCreatingFormOpened: boolean;
+
+  @Output() transactionsCreated: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private budgetService: BudgetService,
               private transactionService: TransactionService) {
@@ -35,11 +38,18 @@ export class TransactionComponent implements OnInit {
   saveTransaction(transaction: Transaction){
     this.isCreatingFormOpened = false;
     this.transactionService.createTransaction(transaction)
-      .subscribe(data => this.transactions.push(data));
+      .subscribe(data => {
+        this.transactions.push(data);
+        this.transactionsCreated.emit(true);
+      });
+
     // this.transactions.push(transaction);
   }
 
   public getColor(transaction: Transaction): string{
     return transaction.isIncoming ? "green" : "red";
+  }
+  public findBudgetById(id: number) : Budget{
+    return this.budgets.find((item: Budget) => id == item.id);
   }
 }

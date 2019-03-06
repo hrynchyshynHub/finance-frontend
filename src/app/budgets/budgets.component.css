@@ -6,7 +6,7 @@
   color: #CFD8DC;
 }
 .budgets-wrapper{
-  height: 800px;
+  height: 520px;
   box-sizing: border-box;
   overflow: scroll;
 }
@@ -51,4 +51,9 @@
 }
 .create-budget-label-wrapper{
   width: 40%;
+}
+.summary{
+  /*background: #3E4C55;*/
+  padding: 10px;
+  color: #CFD8DC;
 }

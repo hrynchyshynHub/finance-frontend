@@ -9,11 +9,17 @@
   <!--TODO: Add hover-->
   <div *ngIf="!isCreatingFormOpened" class="budgets-wrapper">
     <div>
-      <div *ngFor="let budget of budgets">
+        <div *ngFor="let budget of budgets">
         <app-budget-item [budget]="budget"></app-budget-item>
         </div>
         <div class="clear"></div>
     </div>
+  </div>
+  <hr style="color: #CFD8DC;">
+  <div class="summary">
+    Total UAH : {{totalUahAmountAcrossBudget}}&#8372;<br>
+    Total USD : {{totalUsdAmountAcrossBudget}} &#36;<br>
+    Total EUR : {{totalEurAmountAcrossBudget}} &#128;<br>
   </div>
 
   <div *ngIf="isCreatingFormOpened">

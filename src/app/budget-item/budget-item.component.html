@@ -3,10 +3,12 @@
   <img [src]= 'getSourcePath(budget)' class="img-budget-item invert">
   <div class="budget-item-wrapper">
     <div class="budget-item-header">
-      {{budget.totalAmount}} {{budget.currencyType}}
+      Total amount: {{budget.totalAmount}} {{budget.currencyType}}
     </div>
     <div class="budget-item-value">
-      {{budget.name}}
+      Budget name : {{budget.name}}<br>
+      Description : {{budget.description}}
+
     </div>
   </div>
 

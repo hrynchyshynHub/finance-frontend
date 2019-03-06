@@ -1,16 +1,23 @@
 <div class="finance-managment-wrapper">
   <div class="header">
-    <h2>My Finances</h2>
+    <div class="date">{{date | date:'MMM d'}}</div>
+    <div class="title">
+      <h2>My Finances</h2>
+    </div>
   </div>
   <hr/>
 
   <div class="main-finances">
     <div class="budget-wrapper">
-      <app-budgets [budgets]="budgets"></app-budgets>
+      <app-budgets [budgets]="budgets" [totalEurAmountAcrossBudget]="totalEurAmountAcrossBudget"
+      [totalUahAmountAcrossBudget]="totalUahAmountAcrossBudget"
+      [totalUsdAmountAcrossBudget]="totalUsdAmountAcrossBudget"
+      ></app-budgets>
     </div>
     <div class="transaction-wrapper">
       <app-transaction [transactions] = "allTransactions"
-                       [budgets] = "budgets">
+                       [budgets] = "budgets"
+                       (transactionsCreated)="onTransactionsCreated($event)">
       </app-transaction>
     </div>
   </div>
