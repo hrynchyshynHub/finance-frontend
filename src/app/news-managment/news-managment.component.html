@@ -1,0 +1,34 @@
+<div class="news-managment-wrapper">
+
+<div class="header">
+  <div class="date">{{date | date:'MMM d'}}</div>
+  <div class="title">
+    <h2>World news</h2>
+  </div>
+</div>
+<hr/>
+  <div class="first-carousel-wrapper">
+  <ngb-carousel [showNavigationArrows]="false" [showNavigationIndicators]="true">
+    <ng-template ngbSlide *ngFor="let feed of news" >
+      <img [src]="feed.urlToImage" width="100%" >
+      <div class="carousel-caption">
+        <h3>{{feed.title}}</h3>
+        <p>{{feed.description}}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  </div>
+
+  <div class="second-carousel-wrapper">
+    <ngb-carousel [showNavigationArrows]="false" [showNavigationIndicators]="true">
+      <ng-template ngbSlide *ngFor="let feed of news" >
+        <img [src]="feed.urlToImage" width="100%" >
+        <div class="carousel-caption">
+          <h3>{{feed.title}}</h3>
+          <p>{{feed.description}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+</div>

@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {InputsModule} from 'angular-bootstrap-md';
 import { ChartsModule } from 'ng2-charts';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
@@ -20,6 +21,8 @@ import {LoginService} from './services/login.service';
 import { BudgetsComponent } from './budgets/budgets.component';
 import {TransactionComponent} from "./transaction/transaction.component";
 import { BudgetItemComponent } from './budget-item/budget-item.component';
+import { NewsManagmentComponent } from './news-managment/news-managment.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -34,9 +37,12 @@ import { BudgetItemComponent } from './budget-item/budget-item.component';
     LoginComponent,
     BudgetsComponent,
     TransactionComponent,
-    BudgetItemComponent
+    BudgetItemComponent,
+    NewsManagmentComponent,
+    StatisticsComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,

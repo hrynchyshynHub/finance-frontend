@@ -3,4 +3,5 @@ export class Currency {
   usdValueBuy: number;
   eurValueSale: number;
   eurValueBuy: number;
+  created?: Date;
 }
