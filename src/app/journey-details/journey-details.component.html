@@ -1,0 +1,22 @@
+<div *ngIf="journeySubscription">
+  <div>
+    <label>From: </label> {{journeySubscription.from}}
+  </div>
+  <div>
+    <label>To: </label> {{journeySubscription.to}}
+  </div>
+  <div>
+    <label>Active: </label> {{journeySubscription.isActive}}
+  </div>
+  <div>
+    <label>Warning message: </label> {{journeySubscription.warningMessage}}
+  </div>
+
+  <!--<span class="button is-small btn-primary" *ngIf='employee.active' (click)='updateActive(false)'>Inactive</span>-->
+
+  <!--<span class="button is-small btn-primary" *ngIf='!employee.active' (click)='updateActive(true)'>Active</span>-->
+
+  <!--<span class="button is-small btn-danger" (click)='deleteEmployee()'>Delete</span>-->
+
+  <hr/>
+</div>

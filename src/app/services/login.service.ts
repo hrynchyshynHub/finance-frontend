@@ -16,12 +16,16 @@ export class LoginService {
       .subscribe(res => {
         const token = res.headers.get(constants.HEADERS.AUTH_HEADER);
         localStorage.setItem(constants.HEADERS.AUTH_HEADER, token);
-        return this.router.navigate(['/notes']);
+        return this.router.navigate(['/journey']);
       });
   }
 
   isLoggedIn(): boolean{
     return !!localStorage.getItem(constants.HEADERS.AUTH_HEADER)
+  }
+
+  logoff(){
+    localStorage.removeItem(constants.HEADERS.AUTH_HEADER);
   }
 
 }

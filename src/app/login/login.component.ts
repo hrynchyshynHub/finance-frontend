@@ -12,8 +12,7 @@ export class LoginComponent {
   username: string;
   password: string;
 
-  constructor(private loginService: LoginService) {
-  }
+  constructor(private loginService: LoginService) {}
 
   login() {
     const cred = new Credentials(this.username, this.password);
@@ -22,5 +21,9 @@ export class LoginComponent {
 
   isLoggedIn(): boolean {
     return this.loginService.isLoggedIn();
+  }
+
+  logOff(){
+    this.loginService.logoff();
   }
 }

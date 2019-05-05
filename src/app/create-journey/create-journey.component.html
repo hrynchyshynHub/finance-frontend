@@ -1,0 +1,45 @@
+
+<mat-card class="form-wrapper">
+  <mat-card-header>
+    <mat-card-title>Запланувати поїздку</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input #from type="text" placeholder="From" name="from"
+               aria-label="From"
+               matInput [formControl]="myControl"
+               [matAutocomplete]="auto"
+               (keypress)="findStation(from.value)">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option.value" (click)="setFromStation(option)">
+            {{option.title}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input #to type="text" placeholder="To" name="to"
+               aria-label="To"
+               matInput [formControl]="myControl"
+               [matAutocomplete]="auto"
+               (keypress)="findStation(to.value)">
+        <mat-autocomplete #auto="matAutocomplete" >
+          <mat-option *ngFor="let option of options" [value]="option.value" (click)="setToStation(option)">
+            {{option.title}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input #date matInput [matDatepicker]="picker" placeholder="Choose a date" (click)="setDate(date.value)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" (click)="save()">Створити</button>
+      <button mat-raised-button (click)="back()">Назад</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
