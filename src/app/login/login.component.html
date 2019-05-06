@@ -1,23 +1,15 @@
-<div class="login-wrapper" *ngIf="!isLoggedIn()">
-<!--<div *ngIf="!isLoggedIn()">-->
+<mat-card class="mat-card-wrapper">
+  <mat-card-title>Вхід в систему</mat-card-title>
+  <div class="login-wrapper" *ngIf="!isLoggedIn()">
+    <form class="example-form" [formGroup]="form" (submit)="login($event)">
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="username" placeholder="Login">
+      </mat-form-field>
 
-  <div class="logo">
-    <img src="assets/uzgov-logo.png" width="100%" height="600px">
-  </div>
-
-  <div class="form">
-
-    <form name="form" (ngSubmit)="login()">
-      <label class="login-label" for="name">Username</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="username" name="name">
-      <label class="login-label" for="pass">Password</label>
-      <input type="password" class="form-control" id="pass" [(ngModel)]="password" name="pass">
-      <div class="form-group">
-        <button class="btn-login">Login</button>
-      </div>
+      <mat-form-field class="example-full-width">
+        <input type="password" formControlName="password" matInput placeholder="Password">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Увійти</button>
     </form>
-
   </div>
-
-
-</div>
+</mat-card>

@@ -1,22 +1,36 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../services/login.service';
 import {Credentials} from '../models/user';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  username: string;
-  password: string;
+  // username: string;
+  // password: string;
 
-  constructor(private loginService: LoginService) {}
+  public form: FormGroup;
 
-  login() {
-    const cred = new Credentials(this.username, this.password);
-    this.loginService.login(cred);
+  constructor(private loginService: LoginService,
+              private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.form = this.getLoginForm();
+  }
+
+  public login(): void {
+    this.loginService.login(<Credentials>this.form.value);
+  }
+
+  private getLoginForm(): FormGroup {
+    return this.fb.group({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl(''),
+    })
   }
 
   isLoggedIn(): boolean {
