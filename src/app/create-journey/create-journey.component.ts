@@ -3,7 +3,7 @@ import {SubscriptionService} from '../services/subscription.service';
 import {Router} from '@angular/router';
 import {Station} from '../models/station';
 import {Component, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -19,44 +19,39 @@ export interface User {
 export class CreateJourneyComponent implements OnInit {
 
   journey: JourneySubscription = new JourneySubscription(null, null, null);
-  myControl = new FormControl();
   options: Station[];
-  fromStation: Station;
-  toStation: Station;
-  date: string;
 
+  public journeyForm: FormGroup;
 
-  constructor(private subscriptionService: SubscriptionService,  private router: Router) { }
+  constructor(
+    private subscriptionService: SubscriptionService,
+    private router: Router,
+    private fb: FormBuilder,
+  ) { }
 
   ngOnInit() {
+    this.journeyForm = this.getJourneyForm();
   }
 
-  setFromStation(station: Station){
-    console.log('set from station');
-    this.fromStation = station;
-  }
-  setToStation(station: Station){
-    console.log('set to station');
-    this.toStation = station;
-  }
-  setDate(date: string){
-    console.log('set date');
-    this.date = date;
+  private getJourneyForm(): FormGroup {
+    return this.fb.group({
+      from: new FormControl(''),
+      to: new FormControl(''),
+      date: new FormControl(''),
+    })
   }
 
   save() {
-    console.log('zvidku' + this.fromStation);
-    console.log('kuda' + this.toStation);
-    console.log('date' + this.date);
-    this.journey = new JourneySubscription(this.fromStation.value, this.toStation.value, this.date);
+    debugger;
+    this.journey = new JourneySubscription(this.journeyForm.value.from, this.journeyForm.value.to, this.journeyForm.value.date);
     this.subscriptionService.createJourneySubscription(this.journey)
       .subscribe(data => console.log(data), error => console.log(error));
     this.journey = new JourneySubscription(null, null, null);
+    this.router.navigate(['/journey']);
   }
 
   onSubmit() {
     this.save();
-    this.router.navigate(['/journey']);
   }
 
   back(){
@@ -70,4 +65,14 @@ export class CreateJourneyComponent implements OnInit {
       });
   }
 
+  clearOptions(): void {
+    this.options = []
+  }
+
+  displayFn() {
+    return searchStr => {
+      const el = this.options ? this.options.find(el => el.value === searchStr.value) : null;
+      return  el ? el.title : (searchStr.title || '');
+    }
+  }
 }

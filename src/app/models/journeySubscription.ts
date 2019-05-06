@@ -1,13 +1,15 @@
+import {Station} from './station';
+
 export class JourneySubscription {
   id: number;
-  from: number;
-  to: number;
+  from: Station;
+  to: Station;
   date: string;
   time: string;
   warningMessage : string;
   isActive : boolean;
 
-  constructor(from:number, to:number, date:string){
+  constructor(from:Station, to:Station, date:string){
     this.from = from;
     this.to = to;
     this.time = '00:00';

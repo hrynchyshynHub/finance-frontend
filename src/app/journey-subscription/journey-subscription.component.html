@@ -31,12 +31,12 @@
 
         <ng-container matColumnDef="from" >
           <th class="container-wrapper" mat-header-cell *matHeaderCellDef> From </th>
-          <td class="container-wrapper" mat-cell *matCellDef="let element"> {{element.from}} </td>
+          <td class="container-wrapper" mat-cell *matCellDef="let element"> {{element.from.title}} </td>
         </ng-container>
 
         <ng-container matColumnDef="to" >
           <th class="container-wrapper" mat-header-cell *matHeaderCellDef> To </th>
-          <td class="container-wrapper" mat-cell *matCellDef="let element"> {{element.to}} </td>
+          <td class="container-wrapper" mat-cell *matCellDef="let element"> {{element.to.title}} </td>
         </ng-container>
 
         <ng-container matColumnDef="date"  >
