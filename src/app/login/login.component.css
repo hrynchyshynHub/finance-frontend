@@ -1,32 +1,8 @@
-.login-wrapper {
-  width: 90%;
-  height: 100%;
-  padding-top: 150px;
-  color: #CFD8DC;
-  background: rgb(25, 43, 53);
-  background: radial-gradient(circle, rgba(25, 43, 53, 0.9346113445378151) 100%, rgba(47, 62, 79, 1) 100%);
-  float: left;
-}
-
-.form-control {
-  margin-top: 0;
-  margin-left: 40%;
-  width: 20%;
-  background: #CFD8DC;
-}
-
 .login-label {
-  margin-left: 40%;
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 30px;
+  color: rgb(25, 43, 53);
 }
-
-.form-group {
-  margin-left: 40%;
-  margin-top: 20px;
-}
-
-
 .btn-login {
   background: #CFD8DC;
   color: black;
@@ -42,4 +18,42 @@
 .btn-login:hover {
   background-color: lightgoldenrodyellow;
 }
+img{
+  filter: invert(100%) saturate(0%) hue-rotate(23deg) brightness(100%) contrast(00%);
+}
 
+.logo{
+  background: rgb(25, 43, 53);
+  background: radial-gradient(circle, rgba(25, 43, 53, 0.9346113445378151) 100%, rgba(47, 62, 79, 1) 100%);
+  padding-top: 150px;
+  float: left;
+  width: 65%;
+  height: 100%;
+}
+
+.form{
+  padding-left: 30px;
+  padding-top: 150px;
+  float: left;
+  width: 35%;
+  height: 100%;
+  background: white;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 400px;
+  margin: 20px auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.mat-card-wrapper{
+  width: 60%;
+  margin: 40px auto;
+}
+mat-card-title{
+  text-align: center;
+}
