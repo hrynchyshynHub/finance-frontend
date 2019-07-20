@@ -24,4 +24,7 @@ export class LoginService {
     return !!localStorage.getItem(constants.HEADERS.AUTH_HEADER)
   }
 
+  logoff(){
+    localStorage.removeItem(constants.HEADERS.AUTH_HEADER);
+  }
 }
