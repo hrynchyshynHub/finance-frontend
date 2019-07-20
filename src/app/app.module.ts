@@ -23,6 +23,8 @@ import {TransactionComponent} from "./transaction/transaction.component";
 import { BudgetItemComponent } from './budget-item/budget-item.component';
 import { NewsManagmentComponent } from './news-managment/news-managment.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     FormsModule,
     InputsModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [LoginService, AuthGuard,
     {provide: HTTP_INTERCEPTORS, useClass: FinanceInterceptor, multi: true},

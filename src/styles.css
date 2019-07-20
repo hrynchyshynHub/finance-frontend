@@ -34,3 +34,6 @@ body {
   filter: invert(41%) sepia(17%) saturate(411%) hue-rotate(159deg) brightness(95%) contrast(93%);
 }
 /*.opacity { filter: opacity(80%); }*/
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
