@@ -11,7 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './_guards/auth.guard';
-import {AuthInterceptor} from './_shared/auth-intereceptor.service';
+import {FinanceInterceptor} from './_shared/finance.interceptor';
 import {LoginService} from './services/login.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
@@ -49,7 +49,7 @@ import {MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule} fr
     MaterialModule,
   ],
   providers: [LoginService, AuthGuard,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: FinanceInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })
